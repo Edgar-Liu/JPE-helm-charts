@@ -1,0 +1,27 @@
+# values.yaml
+frontend:
+  replicaCount: 1
+  image:
+    repository: chisel-web-ecr
+    tag: latest 
+  service:
+    port: 3000
+    targetPort: 3000
+  hostname: chisel.example.com
+
+backend:
+  replicaCount: 1
+  image:
+    repository: chisel-app-ecr
+    tag: latest
+  service:
+    port: 8000
+    targetPort: 8000
+  hostname: app.chisel.example.com
+
+postgres:
+  imageTag: "15.7"  
+  database: "chiseldb" 
+  storageSize: "300Gi"
+  username: "chiseladmin" 
+  password: "your-strong-password"

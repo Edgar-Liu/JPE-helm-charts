@@ -1,0 +1,14 @@
+# templates/backend-route.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Chart.Name }}-backend-route
+spec:
+  to:
+    kind: Service
+    name: {{ .Chart.Name }}-backend-service
+  port:
+    targetPort: 8000
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

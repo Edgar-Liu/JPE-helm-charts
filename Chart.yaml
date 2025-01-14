@@ -1,0 +1,6 @@
+apiVersion: v2
+name: myapp  # The name of your chart
+description: A Helm chart for deploying my application  # A brief description
+type: application  # The type of chart (usually "application")
+version: 0.1.0  # The version of your chart
+appVersion: 1.0.0  # The version of your application

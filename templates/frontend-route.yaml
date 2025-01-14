@@ -1,0 +1,14 @@
+# templates/frontend-route.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Chart.Name }}-frontend-route
+spec:
+  to:
+    kind: Service
+    name: {{ .Chart.Name }}-frontend-service
+  port:
+    targetPort: 3000
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
